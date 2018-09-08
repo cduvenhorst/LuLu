@@ -20,7 +20,7 @@
         <window title="Add Rule" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="196" y="240" width="439" height="216"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <value key="minSize" type="size" width="439" height="216"/>
             <value key="maxSize" type="size" width="800" height="216"/>
             <view key="contentView" id="se5-gp-TjO">
@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title=" block" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="JJl-Lz-apr">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" size="13" name="Menlo-Bold"/>
+                            <font key="font" metaFont="controlContent"/>
                         </buttonCell>
                         <connections>
                             <action selector="radioButtonsHandler:" target="-2" id="yN0-n8-8lJ"/>
@@ -46,7 +46,7 @@
                         </constraints>
                         <buttonCell key="cell" type="push" title="browse" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OoX-aE-Hgf">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" metaFont="controlContent"/>
                         </buttonCell>
                         <connections>
                             <action selector="browseButtonHandler:" target="-2" id="PT1-Ty-Np7"/>
@@ -58,7 +58,7 @@
                             <constraint firstAttribute="height" constant="24" id="mOR-Su-gK2"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Bon-iR-8FO">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="radio" title=" allow" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="oCK-aR-Ek4">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" size="13" name="Menlo-Bold"/>
+                            <font key="font" metaFont="controlContent"/>
                         </buttonCell>
                         <connections>
                             <action selector="radioButtonsHandler:" target="-2" id="3vs-3M-SsZ"/>
@@ -81,7 +81,7 @@
                             <constraint firstAttribute="width" constant="121" id="XgJ-Ba-s1A"/>
                         </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="process path" id="tc1-pS-Wns">
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -102,7 +102,7 @@
                         </constraints>
                         <buttonCell key="cell" type="push" title="cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fX0-Jq-Okq">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="Menlo-Regular"/>
+                            <font key="font" metaFont="controlContent"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -119,7 +119,7 @@ Gw
                         </constraints>
                         <buttonCell key="cell" type="push" title="add" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V5P-DF-wCP">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" size="13" name="Menlo-Bold"/>
+                            <font key="font" metaFont="controlContent"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
