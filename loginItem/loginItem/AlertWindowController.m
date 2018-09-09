@@ -28,6 +28,8 @@
 @synthesize virusTotalButton;
 @synthesize signingInfoButton;
 @synthesize virusTotalPopover;
+@synthesize touchBar;
+@synthesize touchBarLabel;
 
 //center window
 // also, transparency
@@ -158,8 +160,8 @@
     //temp rule label
     self.tempRuleLabel.stringValue = [NSString stringWithFormat:@"temporarily (pid: %@)", [self.alert[ALERT_PID] stringValue]];
     
-    //show touch bar
-    [self initTouchBar];
+    //touchbar alert message
+    self.touchBarLabel.stringValue = [NSString stringWithFormat:@"%@ %@", self.processName.stringValue, self.alertMessage.stringValue];
     
 bail:
     
@@ -542,126 +544,6 @@ bail:
     [[NSApplication sharedApplication] stopModalWithCode:((NSButton*)sender).tag];
     
     return;
-}
-
-//init/show touch bar
--(void)initTouchBar
-{
-    //touch bar items
-    NSArray *touchBarItems = nil;
-    
-    //touch bar API is only 10.12.2+
-    if(@available(macOS 10.12.2, *))
-    {
-        //alloc/init
-        self.touchBar = [[NSTouchBar alloc] init];
-        if(nil == self.touchBar)
-        {
-            //no touch bar?
-            goto bail;
-        }
-        
-        //set delegate
-        self.touchBar.delegate = self;
-        
-        //set id
-        self.touchBar.customizationIdentifier = @"com.objective-see.lulu";
-        
-        //init items
-        touchBarItems = @[@".icon", @".label", @".block", @".allow"];
-        
-        //set items
-        self.touchBar.defaultItemIdentifiers = touchBarItems;
-        
-        //set customization items
-        self.touchBar.customizationAllowedItemIdentifiers = touchBarItems;
-        
-        //activate so touchbar shows up
-        [NSApp activateIgnoringOtherApps:YES];
-    }
-    
-bail:
-    
-    return;
-}
-
-//delegate method
-// init item for touch bar
--(NSTouchBarItem *)touchBar:(NSTouchBar *)touchBar makeItemForIdentifier:(NSTouchBarItemIdentifier)identifier
-{
-    //icon view
-    NSImageView *iconView = nil;
-    
-    //icon
-    NSImage* icon = nil;
-    
-    //item
-    NSCustomTouchBarItem *touchBarItem = nil;
-    
-    //init item
-    touchBarItem = [[NSCustomTouchBarItem alloc] initWithIdentifier:identifier];
-    
-    //icon
-    if(YES == [identifier isEqualToString: @".icon" ])
-    {
-        //init icon view
-        iconView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 30.0, 30.0)];
-        
-        //enable layer
-        [iconView setWantsLayer:YES];
-        
-        //set color
-        [iconView.layer setBackgroundColor:[[NSColor windowBackgroundColor] CGColor]];
-        
-        //mask
-        iconView.layer.masksToBounds = YES;
-        
-        //round corners
-        iconView.layer.cornerRadius = 3.0;
-        
-        //load icon image
-        icon = [NSImage imageNamed:@"LoginItemIcon"];
-        
-        //set size
-        icon.size = CGSizeMake(30, 30);
-        
-        //add image
-        iconView.image = icon;
-        
-        //set view
-        touchBarItem.view = iconView;
-    }
-    
-    //label
-    else if(YES == [identifier isEqualToString:@".label"])
-    {
-        //item label
-        touchBarItem.view = [NSTextField labelWithString:[NSString stringWithFormat:@"%@ %@", self.processName.stringValue,self.alertMessage.stringValue]];
-    }
-    
-    //block button
-    else if(YES == [identifier isEqualToString:@".block"])
-    {
-        //init button
-        touchBarItem.view = [NSButton buttonWithTitle: @"Block" target:self action: @selector(handleUserResponse:)];
-        
-        //set tag
-        // 0: block
-        ((NSButton*)touchBarItem.view).tag = 0;
-    }
-    
-    //allow button
-    else if(YES == [identifier isEqualToString:@".allow"])
-    {
-        //init button
-        touchBarItem.view = [NSButton buttonWithTitle: @"Allow" target:self action: @selector(handleUserResponse:)];
-        
-        //set tag
-        // 1: allow
-        ((NSButton*)touchBarItem.view).tag = 1;
-    }
-    
-    return touchBarItem;
 }
 
 @end

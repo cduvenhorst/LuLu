@@ -14,7 +14,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AlertWindowController : NSWindowController <NSTouchBarProvider, NSTouchBarDelegate>
+@interface AlertWindowController : NSWindowController <NSTouchBarProvider>
 
 /* PROPERTIES */
 
@@ -22,7 +22,8 @@
 @property(nonatomic, retain)NSDictionary* alert;
 
 //touch bar
-@property(nonatomic, retain)NSTouchBar* touchBar;
+@property (weak) IBOutlet NSTouchBar* touchBar;
+@property (weak) IBOutlet NSTextField* touchBarLabel;
 
 /* TOP */
 

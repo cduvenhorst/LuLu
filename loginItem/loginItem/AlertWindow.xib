@@ -2,8 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="14215.3"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.13.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AlertWindowController">
@@ -27,6 +29,8 @@
                 <outlet property="tempRule" destination="T6r-Lc-cqm" id="Bb5-9g-S6e"/>
                 <outlet property="tempRuleLabel" destination="QCK-3b-3zi" id="t49-Rx-juu"/>
                 <outlet property="timeStamp" destination="qWw-SE-uh0" id="9XD-1e-EJI"/>
+                <outlet property="touchBar" destination="avA-NP-KCb" id="eUE-HF-qpR"/>
+                <outlet property="touchBarLabel" destination="ROq-7q-2Xl" id="2wQ-oZ-fvm"/>
                 <outlet property="virusTotalButton" destination="PJQ-Iq-93l" id="S5x-rJ-XJD"/>
                 <outlet property="virusTotalPopover" destination="jsE-Vn-PhK" id="uMq-2j-5rE"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
@@ -58,7 +62,7 @@
                             <constraint firstAttribute="height" constant="50" id="blO-ys-XS5"/>
                             <constraint firstAttribute="width" constant="50" id="m1o-zM-X6Y"/>
                         </constraints>
-                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="LoginItemVTIcon" imagePosition="only" alignment="center" imageScaling="axesIndependently" inset="2" id="8lj-Ke-Kyw">
+                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="LoginItemVTIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8lj-Ke-Kyw">
                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -114,7 +118,7 @@
                         <rect key="frame" x="136" y="78" width="548" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingMiddle" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="zYo-Ag-S29">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -123,7 +127,7 @@
                         <rect key="frame" x="23" y="134" width="97" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="process path:" id="Gqr-cR-TAF">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -141,7 +145,7 @@
                         <rect key="frame" x="136" y="117" width="548" height="34"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingMiddle" truncatesLastVisibleLine="YES" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="BaZ-Jz-Yll">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -162,7 +166,7 @@
                         <rect key="frame" x="23" y="168" width="86" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="process id: " id="HZu-Op-XHi">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -171,7 +175,7 @@
                         <rect key="frame" x="136" y="168" width="548" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" id="ezD-RZ-q5S">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -180,7 +184,7 @@
                         <rect key="frame" x="24" y="61" width="112" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="port/protocol:" id="31V-e4-dgv">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -189,7 +193,7 @@
                         <rect key="frame" x="24" y="78" width="97" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ip address:" id="vmZ-KS-uuK">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -207,7 +211,7 @@
                         <rect key="frame" x="136" y="61" width="548" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" allowsUndo="NO" id="XV5-p0-Rs5">
-                            <font key="font" metaFont="system" size="11"/>
+                            <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -405,7 +409,7 @@
                     <rect key="frame" x="18" y="56" width="511" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title=" - signing auth 1" id="Ki9-ld-5Xu">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -414,7 +418,7 @@
                     <rect key="frame" x="98" y="75" width="431" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="not applicable" id="9Yb-sJ-Kcj">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -423,7 +427,7 @@
                     <rect key="frame" x="18" y="38" width="511" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title=" - signing auth 2" id="1zg-95-QM7">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -432,13 +436,13 @@
                     <rect key="frame" x="18" y="20" width="511" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title=" - signing auth 3" id="FLb-1c-otA">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="-32" y="599"/>
+            <point key="canvasLocation" x="421" y="640"/>
         </view>
         <view id="ZMg-yW-Bgc" userLabel="VirusTotalView">
             <rect key="frame" x="0.0" y="0.0" width="345" height="102"/>
@@ -453,7 +457,7 @@
                     <rect key="frame" x="74" y="22" width="273" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="querying virus total..." id="nFi-bu-Okm">
-                        <font key="font" metaFont="system" size="12"/>
+                        <font key="font" metaFont="cellTitle"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -555,9 +559,82 @@
             </subviews>
             <point key="canvasLocation" x="-123" y="765"/>
         </view>
+        <touchBar id="avA-NP-KCb">
+            <touchBarItems>
+                <touchBarItem id="Ms4-rA-4jB">
+                    <viewController key="viewController" id="xNh-mP-xAz">
+                        <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="1Cm-7c-07M">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mpA-c9-lqt">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="LoginItemIcon" id="9Td-lH-VOv"/>
+                                </imageView>
+                            </subviews>
+                        </view>
+                    </viewController>
+                    <size key="designTimeSize" width="30" height="30"/>
+                </touchBarItem>
+                <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFixedSpaceSmall" id="mvW-aB-k2D"/>
+                <touchBarItem id="IYO-KO-aBB">
+                    <viewController key="viewController" id="gZD-0C-4jh">
+                        <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ROq-7q-2Xl">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="19"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="Bl0-wR-wJC">
+                                <font key="font" usesAppearanceFont="YES"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </viewController>
+                    <size key="designTimeSize" width="38" height="19"/>
+                </touchBarItem>
+                <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFlexibleSpace" id="Rmg-7Q-hD5"/>
+                <touchBarItem id="C17-In-Egk">
+                    <viewController key="viewController" id="TfS-J9-ZdV">
+                        <button key="view" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="afu-ws-2K2">
+                            <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Allow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HYr-xj-pIq">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" usesAppearanceFont="YES"/>
+                            </buttonCell>
+                            <color key="bezelColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="handleUserResponse:" target="-2" id="d2y-dB-I4g"/>
+                            </connections>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="72" height="30"/>
+                </touchBarItem>
+                <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFixedSpaceLarge" id="SWC-vP-Y1V"/>
+                <touchBarItem id="49n-UL-ugP">
+                    <viewController key="viewController" id="lof-so-iDc">
+                        <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gTi-Y8-Kex">
+                            <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Block" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="S7t-au-9Sy">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" usesAppearanceFont="YES"/>
+                            </buttonCell>
+                            <color key="bezelColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="handleUserResponse:" target="-2" id="zxG-S4-Q9T"/>
+                            </connections>
+                        </button>
+                    </viewController>
+                    <size key="designTimeSize" width="72" height="30"/>
+                </touchBarItem>
+            </touchBarItems>
+            <point key="canvasLocation" x="274" y="457"/>
+        </touchBar>
     </objects>
     <resources>
         <image name="LoginItemAncestry" width="50" height="50"/>
+        <image name="LoginItemIcon" width="144" height="144"/>
         <image name="LoginItemVTIcon" width="88" height="80"/>
     </resources>
 </document>
